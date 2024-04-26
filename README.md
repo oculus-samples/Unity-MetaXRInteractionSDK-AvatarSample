@@ -13,7 +13,7 @@ Otherwise, if an individual file does not indicate which license it is subject t
 
 Clone this repo using the "Code" button above, or this command:
 ```sh
-git clone https://github.com/oculus-samples/Unity-MetaXRInteractionSDK.git
+git clone https://github.com/oculus-samples/Unity-MetaXRInteractionSDK-AvatarSample.git
 ```
 
 To run the sample, open the project in *Unity 2022.3.11f1* or newer and load the [Assets/Scenes/AvatarGrabExamples](Assets/Scenes/AvatarGrabExamples.unity) or [Assets/Scenes/AvatarPokeExamples](Assets/Scenes/AvatarPokeExamples.unity) scenes.
