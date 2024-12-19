@@ -21,7 +21,6 @@
 using Oculus.Avatar2;
 using Oculus.Interaction.Input;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
@@ -64,10 +63,15 @@ namespace Oculus.Interaction.AvatarIntegration
                     return;
                 }
 
+                _setupBodyTracking = true;
                 BodyTracking.InputTrackingDelegate =
                     new HandTrackingInputTrackingDelegate(LeftHand, RightHand, Hmd);
+
+#if ISDK_OPENXR_HAND
+                BodyTracking.HandTrackingDelegate = new OpenXRHandTrackingDelegate(LeftHand, RightHand);
+#else
                 BodyTracking.HandTrackingDelegate = new HandTrackingDelegate(LeftHand, RightHand);
-                _setupBodyTracking = true;
+#endif
             }
         }
 
