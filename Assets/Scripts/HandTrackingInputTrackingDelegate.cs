@@ -24,7 +24,7 @@ using UnityEngine;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
-    public class HandTrackingInputTrackingDelegate : OvrAvatarInputTrackingDelegate
+    public class HandTrackingInputTrackingDelegate : IOvrAvatarInputTrackingDelegate
     {
         private IHand _leftHand;
         private IHand _rightHand;
@@ -37,7 +37,7 @@ namespace Oculus.Interaction.AvatarIntegration
             _hmd = hmd;
         }
 
-        public override bool GetRawInputTrackingState(
+        public bool GetInputTrackingState(
             out OvrAvatarInputTrackingState inputTrackingState)
         {
             inputTrackingState = default;

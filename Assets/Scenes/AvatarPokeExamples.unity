@@ -130,6 +130,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _hmd
+      value: 
+      objectReference: {fileID: 1177081121}
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _leftHand
+      value: 
+      objectReference: {fileID: 1177081120}
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _rightHand
+      value: 
+      objectReference: {fileID: 1177081119}
     - target: {fileID: 6000152666242321814, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
       propertyPath: _hmd
       value: 
@@ -186,11 +198,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: OculusInteractionAvatarSdkManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6000152666242321814, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+--- !u!114 &20614505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+  m_PrefabInstance: {fileID: 20614504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb94af3d6d07fd478188e685d6ebb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &52358162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -929,9 +953,9 @@ PrefabInstance:
       value: Avatar
       objectReference: {fileID: 0}
     - target: {fileID: 7503371269228382368, guid: a095f3c7bd0da0047b984b3f4b9f8177, type: 3}
-      propertyPath: _bodyTracking
+      propertyPath: _inputManager
       value: 
-      objectReference: {fileID: 2146821518}
+      objectReference: {fileID: 20614505}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1131,7 +1155,7 @@ PrefabInstance:
     - target: {fileID: 5824888958945119796, guid: 4bf459842f45eb648a8e314fa01c55b6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 7032093815205813286, guid: dda8d4d183f898241969906ee2a03d81, type: 2}
     - target: {fileID: 5824888958945119798, guid: 4bf459842f45eb648a8e314fa01c55b6, type: 3}
       propertyPath: m_text
       value: Glow On Touch
@@ -1207,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 5824888960163335102, guid: 4bf459842f45eb648a8e314fa01c55b6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 7032093815205813286, guid: dda8d4d183f898241969906ee2a03d81, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4254,17 +4278,6 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
---- !u!114 &2146821518 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6000152666242321814, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
-  m_PrefabInstance: {fileID: 20614504}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb94af3d6d07fd478188e685d6ebb57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2262886113447369236
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1002,13 +1002,9 @@ PrefabInstance:
       value: Avatar
       objectReference: {fileID: 0}
     - target: {fileID: 7503371269228382368, guid: a095f3c7bd0da0047b984b3f4b9f8177, type: 3}
-      propertyPath: _bodyTracking
+      propertyPath: _inputManager
       value: 
       objectReference: {fileID: 2117090531}
-    - target: {fileID: 7503371269228382368, guid: a095f3c7bd0da0047b984b3f4b9f8177, type: 3}
-      propertyPath: _activeSubMeshes
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1359,6 +1355,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _hmd
+      value: 
+      objectReference: {fileID: 1621114072}
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _leftHand
+      value: 
+      objectReference: {fileID: 1621114071}
+    - target: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+      propertyPath: _rightHand
+      value: 
+      objectReference: {fileID: 1621114070}
     - target: {fileID: 6000152666242321814, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
       propertyPath: _hmd
       value: 
@@ -1422,7 +1430,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
 --- !u!114 &2117090531 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6000152666242321814, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 206133294157654026, guid: b10f61fafaa17374b85a4def5881de1c, type: 3}
   m_PrefabInstance: {fileID: 2117090530}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

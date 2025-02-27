@@ -47,17 +47,19 @@ MonoBehaviour:
   _creationInfo:
     features: 1398
     renderFilters:
-      lodFlags: -1
+      lodFlags: 31
       manifestationFlags: 2
-      viewFlags: -1
-      subMeshInclusionFlags: -1
-      quality: 0
+      viewFlags: 3
+      subMeshInclusionFlags: 2047
+      quality: 1
+      loadRigZipFromGlb: 1
       reserved: 0000000000000000000000000000000000000000000000000000000000000000
-  _activeView: -1
+  _validateCache: 1
+  _activeView: 2
   _activeManifestation: 2
-  _activeSubMeshes: -1
+  _activeSubMeshes: 2047
   _activeSubMeshesIncludeUntyped: 1
-  _bodyTracking: {fileID: 0}
+  _inputManager: {fileID: 0}
   _facePoseBehavior: {fileID: 0}
   _eyePoseBehavior: {fileID: 0}
   _lipSync: {fileID: 0}

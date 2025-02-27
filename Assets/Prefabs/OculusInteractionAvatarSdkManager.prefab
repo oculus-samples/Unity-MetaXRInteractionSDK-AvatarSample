@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6125658963631062042
+--- !u!1 &5655261991126833141
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6125658963631062040}
-  - component: {fileID: 6125658963631062041}
-  - component: {fileID: 1657962261016358283}
-  - component: {fileID: 8981667461845338034}
-  - component: {fileID: 6000152666242321814}
+  - component: {fileID: 5655261991126833143}
+  - component: {fileID: 5655261991126833142}
+  - component: {fileID: 899439450774996580}
+  - component: {fileID: 7483991328468069469}
+  - component: {fileID: 146890738807287097}
+  - component: {fileID: 4915542812819207421}
+  - component: {fileID: 206133294157654026}
   m_Layer: 0
   m_Name: OculusInteractionAvatarSdkManager
   m_TagString: Untagged
@@ -20,29 +22,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6125658963631062040
+--- !u!4 &5655261991126833143
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125658963631062042}
+  m_GameObject: {fileID: 5655261991126833141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 708683023905840733}
+  - {fileID: 6790306321566831279}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6125658963631062041
+--- !u!114 &5655261991126833142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125658963631062042}
+  m_GameObject: {fileID: 5655261991126833141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b47856a33046ce40862a2fddb86623b, type: 3}
@@ -50,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxConcurrentAvatarsLoading: 64
   MaxConcurrentResourcesLoading: 2
-  _minSliceWorkPerFrameMS: 3
+  _minSliceWorkPerFrameMS: 2
   _maxRequests: 16
   _maxSendBytesPerSecond: -1
   _maxReceiveBytesPerSecond: -1
@@ -74,35 +76,43 @@ MonoBehaviour:
   streamingAssetPostfixLightQuality: rift
   streamingAssetPostfixLightQualityQuest2: quest2
   streamingAssetPostfixUltralightQuality: ultralight
-  assetVersionDefault: 4
-  assetVersionAndroid: 4
-  assetVersionQuest2: 4
+  assetVersionDefault: 10
+  assetVersionAndroid: 10
+  assetVersionQuest2: 10
   streamingAssetFileExtension: .glb.zst
   ovrAvatar2AssetFolder: Oculus
-  _defaultModelColor: {r: 1, g: 1, b: 1, a: 1}
-  ShaderManager: {fileID: 3255524753337494937}
+  _defaultModelColor: {r: 0.11764706, g: 0.6156863, b: 1, a: 1}
+  ShaderManager: {fileID: 7437921344464932938}
   _useCriticalJointJobs: 0
-  EnableFastLoadAvatar: 1
-  UseTimeSlicedBuildSkeletonAndPrimitive: 0
+  TimesliceBudgetStrategy: 1
+  FastLoadAvatarEnabled: 0
+  AllowExperimentalSystemsOverride: 0
   _ovrLogLevel: 3
+  _enableFootPlantingDebugVisualizations: 0
+  _footPlantingLocationVisualizationDuration: 5
+  OnAvatarFootFall:
+    m_PersistentCalls:
+      m_Calls: []
   disableMeshOptimization: 0
   automaticallyRequestPermissions: 1
   _skinningType: 8
   _skinQualityPerLOD: 
   _filterMode: 2
   _anisoLevel: 1
---- !u!114 &1657962261016358283
+--- !u!114 &899439450774996580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125658963631062042}
+  m_GameObject: {fileID: 5655261991126833141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f892af86578f82443a9682973148029a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableNativeManager: 0
+  MinLodLevel: 0
   MaxLodLevel: 4
   LODCountPerFrame: 8
   refreshSeconds: 0
@@ -115,6 +125,7 @@ MonoBehaviour:
   CameraHeight: 1.6
   screenPercentToUpdateImportanceCurvePower: 0.25
   screenPercentToUpdateImportanceCurveMultiplier: 1.5
+  StickyLodEffectFov: 60
   cullingDisablesParentGameObject: 0
   cullingDisablesChildrenGameObjects: 1
   _jointTypeToCenterOn: 13
@@ -124,7 +135,7 @@ MonoBehaviour:
   numDynamicLods: 2
   dynamicLodMaxTrianglesToRender: 90000
   maxActiveAvatars: 5
-  maxVerticesToSkin: 30000
+  maxVerticesToSkin: 60000
   enableDynamicStreaming: 0
   dynamicStreamLodBitsPerSecond: 0000000000000000000000000000000000000000000000000000000000000000
   dynamicStreamLodMaxDistance: 010000000000000003000000000000000900000000000000
@@ -134,19 +145,19 @@ MonoBehaviour:
   firstPersonUpdateImportance: 10000
   avatarLodDebugCanvas: {fileID: 0}
   debug:
-    sceneViewCamera: 0
+    sceneViewCamera: 1
     displayLODLabels: 0
     displayAgeLabels: 0
     displayUpdateDelayLabels: 0
     displayLODColors: 0
     displayLODLabelOffset: {x: 0.3, y: 0, z: 0.3}
---- !u!114 &8981667461845338034
+--- !u!114 &7483991328468069469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125658963631062042}
+  m_GameObject: {fileID: 5655261991126833141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecd1062ecb075db4a83f03b03ba8100d, type: 3}
@@ -159,31 +170,55 @@ MonoBehaviour:
   SkinnerUnormScale: 4
   PositionOutputFormat: 2
   SkinningPositionOutputNormalizationScale: 2.5
-  SkinningPositionOutputNormalizationBias: -1
+  SkinningPositionOutputNormalizationBias: -1.1
   SupportApplicationSpaceWarp: 0
   MotionSmoothing: 0
   _CombineMorphTargetsShader: {fileID: 4800000, guid: bef2973cf0137a04fbdd59ed0bab09bc, type: 3}
   _SkinToTextureShader: {fileID: 4800000, guid: ee1f1406edf162945868fafc408691aa, type: 3}
   _morphAndSkinningComputeShader: {fileID: 7200000, guid: 6593496738c8e8045badc49f0ef2917a, type: 3}
---- !u!114 &6000152666242321814
+--- !u!114 &146890738807287097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125658963631062042}
+  m_GameObject: {fileID: 5655261991126833141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0330898740b1e4ca2071e639e5ecbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4915542812819207421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655261991126833141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488cfafa131933046a924063017e8372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &206133294157654026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655261991126833141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcb94af3d6d07fd478188e685d6ebb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bodyTrackingMode: 1
+  _bodyTrackingMode: 0
   _useAsyncBodySolver: 0
   _enableHipLock: 0
   _hmd: {fileID: 0}
   _leftHand: {fileID: 0}
   _rightHand: {fileID: 0}
---- !u!1 &8949687900403425855
+--- !u!1 &8835240512524233178
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,49 +226,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 708683023905840733}
-  - component: {fileID: 3255524753337494937}
+  - component: {fileID: 6790306321566831279}
+  - component: {fileID: 7437921344464932938}
   m_Layer: 0
-  m_Name: HorizonShaderManager
+  m_Name: Style-2-Avatar-Meta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &708683023905840733
+--- !u!4 &6790306321566831279
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8949687900403425855}
+  m_GameObject: {fileID: 8835240512524233178}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6125658963631062040}
+  m_Father: {fileID: 5655261991126833143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3255524753337494937
+--- !u!114 &7437921344464932938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8949687900403425855}
+  m_GameObject: {fileID: 8835240512524233178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561fe8366de5e7d4fae882c491e3d7dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 637f19aef5eccc146a6ab77a1d4ab0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultShaderConfigurationInitializer: {fileID: 11400000, guid: f0bddb66189f23442a435aed67437255, type: 2}
-  ArrayShaderConfigurationInitializer: {fileID: 11400000, guid: f0bddb66189f23442a435aed67437255, type: 2}
-  SolidColorShaderConfigurationInitializer: {fileID: 11400000, guid: 260fe00c90ebd8148abcf88bca09cce2, type: 2}
-  TransparentShaderConfigurationInitializer: {fileID: 11400000, guid: c77a93072aee9da4b8fc36eeb125dc89, type: 2}
-  EmmisiveShaderConfigurationInitializer: {fileID: 11400000, guid: c77a93072aee9da4b8fc36eeb125dc89, type: 2}
-  SkinShaderConfigurationInitializer: {fileID: 11400000, guid: 2b815828c466e45498c74d690226c0a4, type: 2}
-  LeftEyeShaderConfigurationInitializer: {fileID: 11400000, guid: d355c44f84f94354385fea0772eb3bc7, type: 2}
-  RightEyeShaderConfigurationInitializer: {fileID: 11400000, guid: 4dc61dd44af9e7d488b6434e88ac167e, type: 2}
-  HairShaderConfigurationInitializer: {fileID: 11400000, guid: c4b830c6fb33d8140833e5b37f7c9e0d, type: 2}
-  FastLoadConfigurationInitializer: {fileID: 11400000, guid: d6a8914844d40284395dca35471c343b, type: 2}
+  DefaultShaderConfigurationInitializer: {fileID: 11400000, guid: b450b25fcb13b4d6f864b0d7c7a08d46, type: 2}
+  FastLoadConfigurationInitializer: {fileID: 11400000, guid: fbf59dac2c199e44fb42aa5ecd07dd33, type: 2}

@@ -65,8 +65,8 @@ namespace Oculus.Interaction.AvatarIntegration
 
         private static readonly int JOINTS_PER_HAND = _sourceJoints.Length;
 
-        private IHand _leftHand;
-        private IHand _rightHand;
+        private readonly IHand _leftHand;
+        private readonly IHand _rightHand;
 
         public OpenXRHandTrackingDelegate(IHand leftHand, IHand rightHand)
         {
@@ -79,54 +79,45 @@ namespace Oculus.Interaction.AvatarIntegration
 
         public bool GetHandData(OvrAvatarTrackingHandsState handData)
         {
+            bool hasData = false;
+
             // tracking status flags
             handData.isConfidentLeft = _leftHand.IsHighConfidence;
             handData.isConfidentRight = _rightHand.IsHighConfidence;
             handData.isTrackedLeft = _leftHand.IsTrackedDataValid;
             handData.isTrackedRight = _rightHand.IsTrackedDataValid;
+
             // wrist positions
             Pose handRoot;
             if (_leftHand.GetRootPose(out handRoot))
             {
+                hasData = true;
                 handRoot = TransformPose(handRoot,
                     _inputHands[Handedness.Left], _avatarRootHands[Handedness.Left]);
                 handRoot.rotation = handRoot.rotation * _leftRootOffset;
                 handData.wristPosLeft = new CAPI.ovrAvatar2Transform(handRoot.position, handRoot.rotation);
             }
-            else
-            {
-                return false;
-            }
 
             if (_rightHand.GetRootPose(out handRoot))
             {
+                hasData = true;
                 handRoot = TransformPose(handRoot,
                     _inputHands[Handedness.Right], _avatarRootHands[Handedness.Right]);
                 handRoot.rotation = handRoot.rotation * _rightRootOffset;
                 handData.wristPosRight = new CAPI.ovrAvatar2Transform(handRoot.position, handRoot.rotation);
             }
-            else
-            {
-                return false;
-            }
 
             // joint rotations
             int destOffset = 0;
-            if (!CopyJointRotations(_leftHand, handData.boneRotations, destOffset))
-            {
-                return false;
-            }
+            hasData |= CopyJointRotations(_leftHand, handData.boneRotations, destOffset);
 
             destOffset = JOINTS_PER_HAND;
-            if (!CopyJointRotations(_rightHand, handData.boneRotations, destOffset))
-            {
-                return false;
-            }
+            hasData |= CopyJointRotations(_rightHand, handData.boneRotations, destOffset);
 
             handData.handScaleLeft = _leftHand.Scale;
             handData.handScaleRight = _rightHand.Scale;
 
-            return true;
+            return hasData;
         }
 
         private bool CopyJointRotations(IHand hand,
@@ -140,13 +131,16 @@ namespace Oculus.Interaction.AvatarIntegration
 
             for (int i = 0; i < JOINTS_PER_HAND; ++i)
             {
+                Quaternion localPose = Quaternion.identity;
+
                 int index = _sourceJoints[i];
-                if (index < 0)
+                if (index >= 0)
                 {
-                    continue;
-                }
-                destination[destinationOffset + i] = TransformRotation(localJoints[index].rotation,
+                    localPose = TransformRotation(localJoints[index].rotation,
                    inputHand, _avatarHandSpace);
+                }
+
+                destination[destinationOffset + i] = localPose;
             }
             return true;
         }

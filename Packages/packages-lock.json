@@ -1,25 +1,24 @@
 {
   "dependencies": {
     "com.meta.xr.sdk.avatars": {
-      "version": "24.0.1",
-      "depth": 1,
+      "version": "33.0.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
-        "com.unity.textmeshpro": "3.0.6",
-        "com.meta.xr.sdk.platform": "59.0.0",
+        "com.meta.xr.sdk.core": "69.0.1",
+        "com.meta.xr.sdk.platform": "69.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.xr.legacyinputhelpers": "2.1.9"
+        "com.unity.xr.legacyinputhelpers": "2.1.9",
+        "com.meta.xr.sdk.avatars.sample.assets": "33.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.meta.xr.sdk.avatars.sample.assets": {
-      "version": "24.0.0",
+      "version": "33.0.0",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.meta.xr.sdk.avatars": "24.0.1"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.meta.xr.sdk.core": {
@@ -50,12 +49,11 @@
       "url": "https://packages.unity.com"
     },
     "com.meta.xr.sdk.platform": {
-      "version": "59.0.0",
-      "depth": 2,
+      "version": "69.0.0",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.meta.xr.sdk.core": "59.0.0"
+        "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -196,7 +194,7 @@
     },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.11",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.vr": "1.0.0",
