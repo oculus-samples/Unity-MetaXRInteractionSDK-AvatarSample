@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5196929556764948799}
-  - component: {fileID: 7503371269228382368}
+  - component: {fileID: 9090392181082416032}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7503371269228382368
+--- !u!114 &9090392181082416032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5387845709147328024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cc9f112881fe648b1af1feaa98396f, type: 3}
+  m_Script: {fileID: 11500000, guid: f775fcfeef42d0543abbd1e03dfe74fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _creationInfo:
@@ -50,14 +50,14 @@ MonoBehaviour:
       lodFlags: 31
       manifestationFlags: 2
       viewFlags: 3
-      subMeshInclusionFlags: 2047
+      subMeshInclusionFlags: -1
       quality: 1
       loadRigZipFromGlb: 1
       reserved: 0000000000000000000000000000000000000000000000000000000000000000
   _validateCache: 1
   _activeView: 2
   _activeManifestation: 2
-  _activeSubMeshes: 2047
+  _activeSubMeshes: -1
   _activeSubMeshesIncludeUntyped: 1
   _inputManager: {fileID: 0}
   _facePoseBehavior: {fileID: 0}
@@ -100,3 +100,13 @@ MonoBehaviour:
   _hidden: 0
   useRenderLods: 1
   _isLocal: 1
+  _loadUserFromCdn: 1
+  _cdnUserID: 0
+  _style2DropdownIndex: 0
+  _deferLoading: 0
+  _assets: []
+  _underscorePostfix: 1
+  _overridePostfix: 
+  _autoCdnRetry: 1
+  _enablePollingForAvatarCreation: 1
+  _changeCheckInterval: 8
