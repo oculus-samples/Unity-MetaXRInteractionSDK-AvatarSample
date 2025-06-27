@@ -1,4 +1,4 @@
-![Avatar Samples Banner](./Media/AvatarGrabExamples.JPG "Avatar Integration Samples")
+![Avatar Samples Banner](./Media/AvatarsHumanSkinDefault.gif "Avatar Integration Samples")
 
 # Avatar Integration Samples
 
