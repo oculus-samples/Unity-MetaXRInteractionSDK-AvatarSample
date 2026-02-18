@@ -18,11 +18,13 @@
  * limitations under the License.
  */
 
+using Meta.XR.Samples;
 using Oculus.Avatar2;
 using UnityEngine;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
+    [MetaCodeSample("ISDK-AvatarIntegration")]
     public class InteractionAvatarConversions
     {
         public static CAPI.ovrAvatar2Transform PoseToAvatarTransform(Pose pose)

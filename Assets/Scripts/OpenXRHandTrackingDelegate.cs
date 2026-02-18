@@ -19,6 +19,7 @@
  */
 
 #if ISDK_OPENXR_HAND
+using Meta.XR.Samples;
 using Oculus.Avatar2;
 using Oculus.Interaction.Input;
 using UnityEngine;
@@ -27,6 +28,7 @@ using static Oculus.Interaction.Input.HandMirroring;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
+    [MetaCodeSample("ISDK-AvatarIntegration")]
     public class OpenXRHandTrackingDelegate : IOvrAvatarHandTrackingDelegate
     {
         private static readonly int[] _sourceJoints = new int[]

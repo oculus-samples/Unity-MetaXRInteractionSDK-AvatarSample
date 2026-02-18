@@ -18,12 +18,14 @@
  * limitations under the License.
  */
 
+using Meta.XR.Samples;
 using Oculus.Avatar2;
 using Oculus.Interaction.Input;
 using UnityEngine;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
+    [MetaCodeSample("ISDK-AvatarIntegration")]
     public class HandTrackingInputTrackingDelegate : IOvrAvatarInputTrackingDelegate
     {
         private IHand _leftHand;

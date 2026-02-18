@@ -17,7 +17,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #if !ISDK_OPENXR_HAND
+using Meta.XR.Samples;
 using Oculus.Avatar2;
 using Oculus.Interaction.Input;
 using UnityEngine;
@@ -25,6 +27,7 @@ using UnityEngine.Assertions;
 
 namespace Oculus.Interaction.AvatarIntegration
 {
+    [MetaCodeSample("ISDK-AvatarIntegration")]
     public class HandTrackingDelegate : IOvrAvatarHandTrackingDelegate
     {
         private IHand _leftHand;
