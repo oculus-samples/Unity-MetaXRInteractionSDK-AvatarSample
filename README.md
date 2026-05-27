@@ -30,3 +30,21 @@ The project contains two sample scenes that showcase different interactions impl
 * AvatarPokeExamples - Demonstrates "Poke" interactions with Avatars.
 
 For information about the individual SDKs, see the [Interaction SDK documentation](https://developer.oculus.com/documentation/unity/unity-isdk-interaction-sdk-overview/) and the [Avatars SDK documentation](https://developer.oculus.com/documentation/unity/meta-avatars-overview/).
+
+## Agent-ready development
+
+This sample is configured for AI coding agents.
+
+For the best experience in VS Code or Cursor, install the Meta Horizon extension:
+
+https://marketplace.visualstudio.com/items?itemName=meta.meta-vr-dev
+
+This repository also includes agent instructions and MCP configuration for Meta Quest Agentic Tools:
+
+https://github.com/meta-quest/agentic-tools
+
+Suggested first prompt:
+
+```text
+Read AGENTS.md, detect what type of Meta Quest sample this is, enable the hzdb MCP server if available, and explain how to build, run, and debug this sample on a Quest device.
+```
